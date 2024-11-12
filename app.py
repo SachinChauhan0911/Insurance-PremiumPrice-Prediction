@@ -50,7 +50,7 @@ NumberofMajorSurgeries = col2.selectbox(
 
 
 def model_pred(Age, Diabetes, BloodPressureproblems, AnyTransplants, AnyChronicDisease, Height, Weight, HistoryofCancerinFamily, NumberofMajorSurgeries):
-    with open("best_model_4", "rb") as file:
+    with open("best_model_4.pkl", "rb") as file:
         pred = pickle.load(file)
 
     input_features = [[Age, Diabetes, BloodPressureproblems,\
@@ -63,4 +63,4 @@ if (st.button("Predict Premium")):
                     AnyTransplants, AnyChronicDisease, Height, Weight, \
                     HistoryofCancerinFamily, NumberofMajorSurgeries)
    
-    st.text(f"The Premium Price for the individuals to be insured is {Premium[0].round(2)}")
+    st.text(f"The Premium Price for the individuals to be insured is Rs.{Premium[0].round(2)}")
